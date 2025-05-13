@@ -16,24 +16,36 @@ arduino setup.png
 
 ## Links to documentation
 
-##### Video 1: 
+##### Video 1:
+
 
 ##### Other Links: 
 
 
 ## Steps I followed
-1. Write the steps you followed here.  This way you can keep track of where you might have messed up if the project does not work. 
+1. Write the steps you followed here.  This way you can keep track of where you might have messed up if the project does not work.
+   * we find the CameraWebServer sketch under File > Examples > ESP32 > Camera > CameraWebServer.
+   * to make it work we need to select the appropriate camera model which is AI-THINKER model.
+   * Next, you need to tell the ESP32-CAM about your wireless network. Fill in the following variables with your network credentials:
+
+const char* ssid = "REPLACE_WITH_YOUR_SSID";
+const char* password = "REPLACE_WITH_YOUR_PASSWORD";
+
+   * Once you have uploaded the sketch, open the serial monitor at baud rate 115200 and press the Reset button on the ESP32-CAM. You should see the IP address in the Serial Monitor.
+   * Launch a browser and enter the IP address shown on the serial monitor. Ensure that the web browser is on the same network that the ESP32-CAM is connected to.
+
+The ESP32-CAM should display a web page. To begin video streaming, press the Start Stream button.
+
+
+
+
 
 ## Problems
-Note your problems or errors here.  Google any error you may come across, and not what you tried (even if it does not work), and what was the final answer. Document your errors and solutions that worked for you.  
+Note your problems or errors here.  Google any error you may come across, and not what you tried (even if it does not work), and what was the final answer. Document your errors and solutions that worked for you. 
+* There were no problems while I was setting up the webcam on Arduino.  
 
-1. E (485) camera: Camera probe failed with error 0x105(ESP_ERR_NOT_FOUND)
-Camera init failed with error 0x105
- How did I solve: 
 
 ### Example Problem
-1. Arduino code will not load on ESP32 Cam.
-   Answer: Camera drivers were incorrect I needed to install the driver: [https://www.wch-ic.com/downloads/CH341SER_ZIP.html](https://github.com/martin-ger/esp32_nat_router).  I used file, "CH341SER.ZIP" and it worked.
 
 
 ## Final Report
